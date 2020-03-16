@@ -1,1 +1,8 @@
-<p>add works!</p>
+<h2>Add new todo</h2>
+<div>
+
+    <input type="text" placeholder="name" #name>
+    <input type="number" placeholder="priority" #priority>
+  
+    <button (click)="addToDo(name.value, priority.value)">Add a Todo</button>
+</div>

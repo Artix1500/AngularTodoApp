@@ -24,7 +24,7 @@ export function reducer(state: ToDo[] = [initialState], action: ToDoActions.Acti
         case ToDoActions.DONE_TODO:
             return state.map(x => {
                 if (x.id === action.payload.id) {
-                    x.done = !x.done;
+                    x =  {...x, done: !x.done};
                 }
                 return x;
             })
