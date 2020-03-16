@@ -1,0 +1,3 @@
+{{ todo.name }} priority: {{todo.priority}} - Done: {{ todo.done ? "YES": "NO" }}
+<button (click)="removeToDo.emit(todo.id)">Remove</button>
+<button (click)="doneToDo.emit(todo)">Done</button>

@@ -3,9 +3,12 @@
     <h3>Todos</h3>
     <ul>
       <li *ngFor="let todo of todos$ | async" [ngClass]="todo.done ? 'todoDone' : 'todo'">
-        {{ todo.name }} priority: {{todo.priority}} - Done: {{ todo.done.toString() }}
-        <button (click)="removeToDo(todo.id)">Remove</button>
-        <button (click)="doneToDo(todo)">Done</button>
+        <app-todo 
+            [todo]="todo"
+            (removeToDo)="onRemoveToDo($event)"                    
+            (doneToDo)="onDoneToDo($event)"            
+        >
+        </app-todo>
       </li>
     </ul>
   

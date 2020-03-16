@@ -14,18 +14,18 @@ export class DashboardComponent implements OnInit {
   todos$: Observable<ToDo[]>;
 
   constructor(private store: Store<{ todo: ToDo[] }>) {
-    this.todos$ = this.store.pipe(select("todo"));// .select();
+    this.todos$ = this.store.pipe(select("todo"));
   }
 
-  removeToDo(id) {
+  onRemoveToDo(id) {
     this.store.dispatch(new ToDoActions.RemoveToDo(id) )
   }
 
-  doneToDo(todo) {
+  onDoneToDo(todo) {
     this.store.dispatch(new ToDoActions.DoneToDo(todo) )
   }
 
   ngOnInit(): void {
+    this.todos$.subscribe(data => console.log(data));
   }
-
 }
