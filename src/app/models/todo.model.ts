@@ -1,4 +1,6 @@
 export interface ToDo {
+    id: number,
     name: string,
-    priority: number
+    priority: number,
+    done: boolean
 }
